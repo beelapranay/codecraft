@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Craftcode | Home{% endblock %}
+
+{% block content %}
+  <section class="hero hero-home">
+    <div class="hero-copy">
+      <p class="eyebrow">Repository Review</p>
+      <h1>Move from pasted GitHub URL to review dashboard in a cleaner flow.</h1>
+      <p class="lede">
+        Craftcode now separates discovery, analysis, and results into distinct pages so the product feels like an application instead of a single overloaded screen.
+      </p>
+      <div class="hero-actions">
+        <a class="cta-button" href="/analyze">Start Analysis</a>
+        <a class="ghost-button link-button" href="/report">Open Last Report</a>
+      </div>
+    </div>
+
+    <aside class="panel hero-panel">
+      <div class="panel-header">
+        <div>
+          <p class="section-kicker">Flow</p>
+          <h2>Three pages, one job each</h2>
+        </div>
+      </div>
+      <div class="step-list">
+        <article class="step-card">
+          <p class="step-index">01</p>
+          <h3>Home</h3>
+          <p>Introduce the product and route users into the analysis flow.</p>
+        </article>
+        <article class="step-card">
+          <p class="step-index">02</p>
+          <h3>Analyze</h3>
+          <p>Paste a repository URL, start the scan, and wait for the model-backed review.</p>
+        </article>
+        <article class="step-card">
+          <p class="step-index">03</p>
+          <h3>Report</h3>
+          <p>Inspect the summary, top priorities, and issue tables without the input form crowding the page.</p>
+        </article>
+      </div>
+    </aside>
+  </section>
+
+  <section class="feature-grid">
+    <article class="panel feature-panel">
+      <p class="section-kicker">Findings</p>
+      <h2>What the review covers</h2>
+      <ul class="feature-list">
+        <li>Styling and frontend consistency issues</li>
+        <li>Missing tests and weak test coverage</li>
+        <li>Clean-code and maintainability problems</li>
+        <li>Security, dependency, and CI/CD risks</li>
+        <li>Architectural improvements and pattern opportunities</li>
+      </ul>
+    </article>
+
+    <article class="panel feature-panel">
+      <p class="section-kicker">Scoring</p>
+      <h2>Deterministic summary</h2>
+      <p class="feature-copy">
+        Gemini generates the findings, but Craftcode computes the grade and health score with a fixed rubric so the same issue set produces the same summary every time.
+      </p>
+    </article>
+  </section>
+{% endblock %}

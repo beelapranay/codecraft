@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Craftcode{% endblock %}</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body data-page="{{ page_name }}">
+    <div class="page-shell">
+      <div class="backdrop backdrop-one"></div>
+      <div class="backdrop backdrop-two"></div>
+
+      <header class="site-header">
+        <a class="brandmark" href="/">
+          <span class="brandmark-dot"></span>
+          <span>Craftcode</span>
+        </a>
+        <nav class="site-nav">
+          <a class="nav-link {% if page_name == 'home' %}is-active{% endif %}" href="/">Home</a>
+          <a class="nav-link {% if page_name == 'analyze' %}is-active{% endif %}" href="/analyze">Analyze</a>
+          <a class="nav-link {% if page_name == 'report' %}is-active{% endif %}" href="/report">Report</a>
+        </nav>
+      </header>
+
+      {% block content %}{% endblock %}
+    </div>
+
+    <script src="/static/app.js" defer></script>
+  </body>
+</html>

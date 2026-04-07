@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}Craftcode | Analyze{% endblock %}
+
+{% block content %}
+  <section class="hero hero-compact">
+    <p class="eyebrow">Analyze</p>
+    <h1>Submit a repository for review.</h1>
+    <p class="lede">
+      Paste a GitHub URL and Craftcode will clone the repo, scan the code, and generate a structured engineering report.
+    </p>
+  </section>
+
+  <main class="layout analysis-layout">
+    <section class="panel input-panel">
+      <div class="panel-header">
+        <div>
+          <p class="section-kicker">Input</p>
+          <h2>Repository URL</h2>
+        </div>
+        <span class="chip">GitHub URL</span>
+      </div>
+
+      <form id="analyze-form" class="analyze-form">
+        <label class="field-label" for="target">Paste repository link</label>
+        <div class="form-row">
+          <input
+            id="target"
+            name="target"
+            type="url"
+            inputmode="url"
+            placeholder="https://github.com/owner/repo"
+            autocomplete="off"
+            required
+          />
+          <button id="submit-button" type="submit">Analyze</button>
+        </div>
+      </form>
+
+      <div id="status-banner" class="status-banner hidden" role="status" aria-live="polite"></div>
+      <div id="error-banner" class="error-banner hidden" role="alert"></div>
+    </section>
+
+    <aside class="panel side-panel">
+      <div class="panel-header">
+        <div>
+          <p class="section-kicker">Review Scope</p>
+          <h2>What happens next</h2>
+        </div>
+      </div>
+
+      <div class="helper-grid">
+        <div class="helper-card">
+          <h3>Repo scan</h3>
+          <p>Craftcode collects supported source files, trims oversized files, and builds a bounded prompt context.</p>
+        </div>
+        <div class="helper-card">
+          <h3>Gemini review</h3>
+          <p>If <code>GEMINI_API_KEY</code> is present, Gemini returns issue lists covering tests, styling, code quality, security, and architecture.</p>
+        </div>
+        <div class="helper-card">
+          <h3>Deterministic score</h3>
+          <p>The backend computes the score from the findings so the dashboard stays consistent between runs with the same findings.</p>
+        </div>
+      </div>
+
+      <a class="ghost-button link-button full-width-link" href="/report">Open Last Report</a>
+    </aside>
+  </main>
+{% endblock %}

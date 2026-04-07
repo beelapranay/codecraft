@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Craftcode | Report{% endblock %}
+
+{% block content %}
+  <section class="hero hero-compact report-hero">
+    <div>
+      <p class="eyebrow">Report</p>
+      <h1>Review dashboard</h1>
+      <p class="lede">
+        Inspect the latest analysis without the input form competing for space.
+      </p>
+    </div>
+    <div class="report-meta">
+      <p class="report-target-label">Last analyzed target</p>
+      <p id="report-target" class="report-target">No repository analyzed yet.</p>
+    </div>
+  </section>
+
+  <section class="panel results-panel report-page-panel">
+    <div class="panel-header">
+      <div>
+        <p class="section-kicker">Dashboard</p>
+        <h2>Structured findings</h2>
+      </div>
+      <div class="action-row">
+        <a class="ghost-button link-button" href="/analyze">Analyze Another</a>
+        <button id="export-button" class="ghost-button" type="button" disabled>Export JSON</button>
+        <button id="reset-button" class="ghost-button" type="button">Clear Report</button>
+      </div>
+    </div>
+
+    <div id="status-banner" class="status-banner hidden" role="status" aria-live="polite"></div>
+    <div id="error-banner" class="error-banner hidden" role="alert"></div>
+
+    <div id="empty-state" class="empty-state report-empty-state">
+      <p class="empty-title">No stored report</p>
+      <p class="empty-copy">Run an analysis on the Analyze page first, then come back here to inspect the dashboard.</p>
+      <a class="cta-button" href="/analyze">Go To Analyze</a>
+    </div>
+
+    <div id="results-root" class="results-root hidden"></div>
+  </section>
+{% endblock %}

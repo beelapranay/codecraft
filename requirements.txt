@@ -1,0 +1,7 @@
+fastapi
+gitpython
+google-genai
+jinja2
+rich
+typer
+uvicorn
